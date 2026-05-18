@@ -45,6 +45,19 @@ app.get('/api/search', async (req, res) => {
   }
 });
 
+app.get('/anime', async (req, res) => {
+  const { data, error } = await supabase
+    .from('anime')
+    .select();
+
+  if (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Failed to fetch favorites' });
+  } else {
+    res.json(data);
+  }
+});
+
 
 app.post('/anime', async (req, res) => {
   console.log('Adding Anime');

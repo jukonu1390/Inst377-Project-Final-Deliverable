@@ -1,14 +1,22 @@
 # Inst377-Project-Final-Deliverable
 Jasmine Ukonu - Final Project
 
-Title: My Anime Finder
+# My Anime Finder
 
-Description: This system will use the Jikan API to get anime data from MyAnimeList and provide anime suggestions based on the ratings and most-watched data. Users will be able to filter recommendations. You can also search for anime by title, filter by genre, and more. The system will be a personalized anime recommendation assistant.
+## Description: 
+The Anime Recommender Web Application is designed to help users discover new anime to watch. This app uses the Jikan API to get anime data from MyAnimeList and provide anime suggestions based on the ratings and most-watched data. Users can also search for anime by title and save animes to their favorites to watch later. The system will be a personalized anime recommendation assistant.
 
 
-Description of target browsers (iOS? Android? Which ones?):
+## Target browsers (iOS? Android? Which ones?):
 
-Link to Developer Manual:
+This application is designed to work on desktop and mobile and will be avalible on both android and iOS. 
+
+- Google Chrome 
+- Mozilla Firefox 
+- Microsoft Edge 
+- Safari 
+
+## Developer Manual: [View Developer Manual](./docs/developerManual.md)
 
 
 

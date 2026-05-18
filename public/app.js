@@ -13,17 +13,17 @@ async function getAnime() {
 }
 
 async function getRandomAnime() {
-    try {
-      const res = await fetch('/api/random');
-      const data = await res.json();
-  
-      console.log("Random anime:", data);
-  
-      displayAnime([data]);
-    } catch (err) {
-      console.error("failed:", err);
-    }
+  try {
+    const res = await fetch("/api/random");
+    const data = await res.json();
+
+    console.log("Random anime:", data);
+
+    displayAnime([data]);
+  } catch (err) {
+    console.error("failed:", err);
   }
+}
 
 function displayAnime(animeList) {
   const animeBox = document.getElementById("animePoster");
@@ -68,6 +68,14 @@ function displayAnime(animeList) {
 
     animeBox.appendChild(container);
   });
+  anime({
+    targets: ".animeCard",
+    scale: [0.8, 1],
+    opacity: [0, 1],
+    translateY: [30, 0],
+    duration: 800,
+    easing: "easeOutBack",
+  });
 }
 
 async function saveFavorite(id, title, image, rating, genres) {
@@ -102,7 +110,7 @@ async function animePictures() {
     singleSlide.className = "swiper-slide";
 
     singleSlide.innerHTML = `
-        <img src="${anime.images.jpg.image_url}"/>
+        <img src="${anime.images.jpg.image_url}" class="swiper-img"/>
         <p>${anime.title}</p>
       `;
 
@@ -112,6 +120,14 @@ async function animePictures() {
   swiper = new Swiper(".swiper", {
     direction: "horizontal",
     loop: true,
+
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+
+    speed: 1000,
 
     pagination: {
       el: ".swiper-pagination",
@@ -128,6 +144,44 @@ async function animePictures() {
   });
 }
 
+async function loadFavorites() {
+  try {
+    const res = await fetch("/anime");
+    const data = await res.json();
+
+    displayFavorites(data);
+  } catch (err) {
+    console.error("Failed to load favorites:", err);
+  }
+}
+
+function displayFavorites(animeList) {
+  const container = document.getElementById("favoritesList");
+
+  container.innerHTML = "";
+
+  animeList.forEach((anime) => {
+    const card = document.createElement("div");
+    card.classList.add("animeCard");
+
+    const title = document.createElement("h2");
+    const image = document.createElement("img");
+    const rating = document.createElement("p");
+    const genres = document.createElement("p");
+
+    title.textContent = anime.title;
+    image.src = anime.image_url;
+    image.width = 200;
+    rating.textContent = "Rating: " + anime.score;
+    genres.textContent = "Genres: " + anime.genres;
+
+    card.append(image, title, rating, genres);
+
+    container.appendChild(card);
+  });
+}
+
 window.onload = function () {
   animePictures();
+  loadFavorites();
 };
