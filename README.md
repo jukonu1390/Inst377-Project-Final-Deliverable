@@ -16,7 +16,7 @@ This application is designed to work on desktop and mobile and will be avalible 
 - Microsoft Edge 
 - Safari 
 
-## Developer Manual: [View Developer Manual](./docs/developerManual.md)
+## Developer Manual: [View Developer Manual Here](./docs/developerManual.md)
 
 
 

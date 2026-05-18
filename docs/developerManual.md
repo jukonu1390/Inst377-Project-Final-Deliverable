@@ -7,16 +7,16 @@ This application is a Anime Recommender web app that allows users to search for 
 ## Installation & Setup
 
 ### 1. Clone the repository
-git clone <your-repo-link>
-cd <your-project-folder>
+git clone 'your-repo-link'
+cd 'your-project-folder'
 
 ### 2. Install dependencies
 run 'npm install' in terminal to install dependancies
 
 ### 3. Environment Variables
 Create a .env file in the root directory and add:
-SUPABASE_URL=your_supabase_url
-SUPABASE_KEY=your_supabase_key
+- SUPABASE_URL=your_supabase_url
+- SUPABASE_KEY=your_supabase_key
 
 ## Run the app
 Start the server locally:
@@ -30,7 +30,7 @@ GET /api/random:
 - Returns: JSON object (anime)
 
 
-GET /api/search?q=<animeName>
+GET /api/search?q='animeName'
 
 - Searches for anime based on user entry
 - Returns: JSON array or single anime object
