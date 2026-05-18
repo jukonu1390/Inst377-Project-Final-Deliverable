@@ -8,7 +8,7 @@ The Anime Recommender Web Application is designed to help users discover new ani
 
 ## Target browsers (iOS? Android? Which ones?):
 
-This application is designed to work on desktop and mobile and will be avalible on both android and iOS. 
+This application is designed to work on desktop and mobile and will be available on both android and iOS. 
 
 - Google Chrome 
 - Mozilla Firefox 
